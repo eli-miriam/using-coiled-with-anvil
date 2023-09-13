@@ -1,0 +1,55 @@
+correct_dependency_ids: {}
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/files.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: StartupForm}
+package_name: Using_Coiled_with_Anvil
+allow_embedding: false
+name: Clone of Using Coiled with Anvil
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-full
+  server_spec: {base: python310-datascience}
+  server_spec_disabled: {requirements: '', base: python310-datascience}
+  server_persist: true
+metadata: {title: Using Coiled with Anvil, description: This app is an example of using Anvil to drive data handling with Coiled. It also shows how to take insights from the data handling and output them as PDFs.}
+startup_form: null
+db_schema:
+  coiled_config:
+    title: coiled_config
+    client: none
+    server: full
+    columns:
+    - name: coiled.account
+      admin_ui: {width: 200}
+      type: string
+    - name: coiled.server
+      admin_ui: {width: 200}
+      type: string
+    - name: coiled.user
+      admin_ui: {width: 200}
+      type: string
+  output:
+    title: output
+    client: search
+    server: full
+    columns:
+    - name: total_counts
+      admin_ui: {width: 340.0034720000001}
+      type: simpleObject
+    - name: random_sample
+      admin_ui: {width: 313.989472}
+      type: simpleObject
+secrets:
+  coiled_token:
+    value: {? '' : CvGqiEtrX2C/wqAxY7QxckMqeZOeEaQKDkEkCm224ONFJz1aKQkoQILOrVq1RzMR/0sS1MxFMJxMS+gCmcNpDWPBpz0HTIVXmTaBoKwPZuI0Am8gCA5n9LBsaG8/wl2yi3lQtRhzTeo5+lag/1wMmhsVZdylnqtXlwowmr/1WmKiV1wBTTPcUXLe3jOsSUDx0wR84tC+BubS25fq8fUIpKaMpRFy82Uu}
+    type: secret
